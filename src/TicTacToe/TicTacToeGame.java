@@ -1,5 +1,6 @@
 package TicTacToe;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToeGame {
@@ -17,8 +18,19 @@ public class TicTacToeGame {
 		System.out.println(position);
 		
 		playGame(gameBoard, position, "player" );
+		
+		Random rand = new Random();
+		int computerPosition = rand.nextInt(9) + 1;
+		playGame(gameBoard, computerPosition, "computer" );
+		
 		printGameBoard(gameBoard);
 	}
+	
+	
+	/*public static void chooseSymbol() {
+		Scanner scan = new  Scanner(System.in);
+		String x
+	}*/
 	//created a tic tac toe game board
 	public static void printGameBoard(char[][] gameBoard) {
 		for (char[] row : gameBoard) {
@@ -68,7 +80,6 @@ public class TicTacToeGame {
 			default:
 				break;
 		}
-		//printGameBoard(gameBoard);
 	
 	}
 }
